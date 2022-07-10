@@ -1,0 +1,12 @@
+<form class="example-form">
+  <input  type="text" size="32" maxlength="32" style="font-size: 14px; border: 1px solid transparent;"
+         placeholder="Search Game Here"
+         [formControl]="control"
+         [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let sjogo of filteredSjogos | async" [value]="sjogo">
+      {{sjogo}}
+    </mat-option>
+  </mat-autocomplete>
+  <button mat-raised-button type="submit" style="background-color: black; color:white; border: 2px  solid red; border-radius: 40px 40px 40px 40px;">SEARCH</button>
+</form>
